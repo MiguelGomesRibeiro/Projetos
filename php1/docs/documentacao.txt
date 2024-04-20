@@ -1,0 +1,14 @@
+
+ur site:
+https://dieta.cacshop.com.br/index.php
+
+
+minha maquina
+D:\Projetos\GitHubMiguel\php1\
+
+
+ftp
+/www/fabio/dieta
+
+
+

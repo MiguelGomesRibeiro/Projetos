@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+
+body {
+    padding: 10px;
+}
+
+div {
+    width: 100%;
+    float: left;
+    padding: 3px;
+}
+
+.cabeca {
+    background-color: aliceblue;
+}
+
+.borda1 {
+    border: 1px solid gray;
+}
+
+
+#formulario div {
+    min-height: 25px;
+}
