@@ -3,7 +3,7 @@
 - 'Ciao mondo', Italiano
 - 'Hola mundo', Espanhol
 - 'Bonjour le monde', Francês
-
+- 'Olá Mundo', Português
 
 ## Arquivos:
 
