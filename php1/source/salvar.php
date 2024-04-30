@@ -35,6 +35,8 @@
     // trocar virgula do centavo por ponto
     $salario = str_replace(",", ".", $salario);
 
+    $telefone = $_POST["telefone"];
+
 
     // exibir informações na tela 
     // apenas para debugar.
@@ -43,17 +45,19 @@
     echo "<br> Ativo = " . $ativo;
     echo "<br> DataNascimento = " . $dataNascimento;
     echo "<br> Salario = " . $salario;
+    echo "<br> Telefone = " . $telefone;
 
     // verificar se não temos valor no campo ID ?
     if ($id == "" || $id == "0")
     {
         // não temos valor de id então é novo registro
         // inserir  a pessoa usando as informações recebidas como parametro.
-        $sql1 = "INSERT INTO Pessoas (nome, ativo, dataNascimento, salario) VALUES (";
+        $sql1 = "INSERT INTO Pessoas (nome, ativo, dataNascimento, salario, telefone) VALUES (";
         $sql1 = $sql1 . "'" . $nome . "', ";
         $sql1 = $sql1 . $ativo . ", ";
         $sql1 = $sql1 . "'" . $dataNascimento . "', ";
-        $sql1 = $sql1 . $salario;
+        $sql1 = $sql1 . $salario . ", ";
+        $sql1 = $sql1 . "'" . $telefone . "' ";
         $sql1 = $sql1 . ")" ;
     }
     else
@@ -64,7 +68,8 @@
         $sql1 = $sql1 . "Nome = '" . $nome . "', ";
         $sql1 = $sql1 . "Ativo = " . $ativo . ", ";
         $sql1 = $sql1 . "DataNascimento = '" . $dataNascimento . "', ";
-        $sql1 = $sql1 . "Salario = " . $salario;
+        $sql1 = $sql1 . "Salario = " . $salario . ", ";
+        $sql1 = $sql1 . "Telefone = '" . $telefone . "' ";
         $sql1 = $sql1 . " WHERE Id = " . $id;
     }
 

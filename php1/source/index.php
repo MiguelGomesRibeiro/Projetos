@@ -22,6 +22,7 @@
 	<div class="borda1" style="width: 150px;">Nascimento</div>
 	<div class="borda1" style="width: 150px;">Salário</div>
 	<div class="borda1" style="width: 150px;">Ações</div>
+	<div class="borda1" style="width: 150px;">Telefone</div>
 
 </div>
 
@@ -29,7 +30,7 @@
 <?php
 
 	// listar todas as pessoas
-	$sql1 = "SELECT Id, Nome, Ativo, DataNascimento, Salario FROM Pessoas ORDER BY Nome ASC";
+	$sql1 = "SELECT Id, Nome, Ativo, DataNascimento, Salario, Telefone FROM Pessoas ORDER BY Nome ASC";
 
     // abrir conexão com o banco de dados
 	$conn = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbDataBaseName);
@@ -101,6 +102,8 @@
 				<a href="formulario.php?id=<?= $row["Id"]; ?>">Editar</a> |
 				<a href="apagar.php?id=<?= $row["Id"]; ?>">Apagar</a>
 			</div>
+			
+			<div class="borda1" style="width: 150px;"><?php echo $row["Telefone"]; ?></div>
 
 
 		</div>

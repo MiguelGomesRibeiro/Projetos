@@ -22,6 +22,8 @@
         $ativo = "checked";
         $dataNascimento = "";
         $salario = "0,00";
+        $telefone = "";
+
 
         // verificar se temos o ID da pessoa informado na url da pagina ?
         // se id informado é diferente de 0 (zero)
@@ -30,7 +32,7 @@
             // temos id, então consultar no banco para editar o registro.
 
             // listar a pessoa desejada para edição
-            $sql1 = "SELECT Id, Nome, Ativo, DataNascimento, Salario FROM Pessoas WHERE Id = " . $_GET["id"];
+            $sql1 = "SELECT Id, Nome, Ativo, DataNascimento, Salario, Telefone FROM Pessoas WHERE Id = " . $_GET["id"];
 
             // abrir conexão com o banco de dados
             $conn = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbDataBaseName);
@@ -83,6 +85,9 @@
 
             // formatar o salario para conter separador de milhar e 2 casas decimais
             $salario = number_format($row["Salario"],2,",",".");
+
+            // guardar campo Telefone sem nenhum tipo de tratamento
+            $telefone = $row["Telefone"];
 
             // fechar conexão com o banco de dados
             mysqli_close($conn);
@@ -153,6 +158,18 @@
 
                 <input type="text" id="salario" name="salario" placeholder="Informe o salário" value="<?= $salario; ?>" />
 
+            </div>
+
+        </div>
+
+        <div id="divTelefone" class="cabeca">
+
+            <div class="borda1" style="width: 200px;">Telefone</div>
+
+            <div class="borda1" style="width: 600px;">
+
+                <input type="text" id="telefone" name="telefone" placeholder="Informe o seu telefone" value="<?= $telefone; ?>" />
+        
             </div>
 
         </div>
